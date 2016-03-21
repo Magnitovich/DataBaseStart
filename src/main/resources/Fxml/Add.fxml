@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logPass.aDatabase.addController">
+   <children>
+      <TextField fx:id="edName" layoutX="194.0" layoutY="37.0" promptText="Name" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <TextField fx:id="edLn" layoutX="194.0" layoutY="82.0" promptText="Lname" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="45.0" />
+      <TextField fx:id="edP" layoutX="194.0" layoutY="129.0" promptText="Phone" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="80.0" />
+      <TextField fx:id="edE" layoutX="194.0" layoutY="175.0" promptText="Email" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="115.0" />
+      <Button fx:id="adOkBtn" contentDisplay="RIGHT" defaultButton="true" layoutX="204.0" layoutY="10.0" mnemonicParsing="false" onAction="#OkBtn" prefWidth="65.0" text="OK" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <graphic>
+            <ImageView pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../jpg/Save-icon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button cancelButton="true" layoutX="204.0" layoutY="45.0" mnemonicParsing="false" onAction="#CancelBtn" prefWidth="65.0" text="Cancel" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+      <Label fx:id="aMessDialog" layoutX="14.0" layoutY="148.0" prefHeight="17.0" prefWidth="227.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" />
+      <Label fx:id="aMessDialog1" layoutX="24.0" layoutY="158.0" prefHeight="17.0" prefWidth="227.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:controller="logPass.aDatabase.aEmailController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="22.0" layoutY="25.0" text="To:" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="25.0" />
+            <Label layoutX="22.0" layoutY="66.0" text="Message:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="60.0" />
+            <TextField fx:id="EmailTo" layoutX="76.0" layoutY="21.0" prefWidth="170.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="20.0" />
+            <TextArea fx:id="InsertText" layoutX="17.0" layoutY="103.0" prefHeight="230.0" prefWidth="230.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="85.0" />
+            <Label layoutX="32.0" layoutY="35.0" text="Email" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button defaultButton="true" layoutX="99.0" layoutY="324.0" mnemonicParsing="false" onAction="#sendMessages" prefWidth="60.0" text="Send" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="80.0" />
+            <Button cancelButton="true" layoutX="165.0" layoutY="324.0" mnemonicParsing="false" prefWidth="60.0" text="Cancel" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

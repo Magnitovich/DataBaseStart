@@ -1,0 +1,53 @@
+
+<project name="ANT" default="new.jar">
+    <!--благодаря id мы можем указать, что этот файл или файлы мы компилируем
+     вместе с  <javac destdir="Build/class" classpathref="myClass">-->
+    <path id="myClass">
+        <fileset dir="src/logPass">
+            <include name="Fxml/*.fxml"/>
+            <include name="jpg/**.*"/>
+        </fileset>
+
+    </path>
+    <!--создаем target которая будет при записывании удалять старую сборку и записывать новую-->
+    <target name="clear">
+        <delete dir="Build"/>
+    </target>
+    <target name="new.jar" depends="compile">
+        <echo> Proverka. DOSHLI DO TOCHKI _____</echo>
+        <jar destfile="Build/bin/myprogram.jar">
+            <!--указываем какие файлы должны быть в jar-->
+            <fileset dir="Build/class">
+                <include name="**/*.class"/>
+            </fileset>
+            <path id="myClass">
+                <fileset dir="src">
+                    <include name="**/*.fxml"/>
+                </fileset>
+
+            </path>
+            <!--указываем какой класс главный, с какого стартует программа- называем класс и указываем полный путь-->
+            <!--<echo> Proverka. DOSHLI MA_NI_FE_ST</echo>-->
+            <manifest>
+
+                <attribute name="Main-Class" value="logPass.Main"/>
+            </manifest>
+
+        </jar>
+        <echo> ~~~~~~PROSHLI MA_NI_FE_ST~~~~~~~~~~</echo>
+    </target>
+    <!--Работаем с нашим проектом, в начале создаем раб. каталоги -->
+    <target name="compile" depends="clear">
+
+        <mkdir dir="Build/class"/>
+        <mkdir dir="Build/bin"/>
+        <!--заполняем каталоги файлами, в  class мы записываем все class-->
+        <javac destdir="Build/class" classpathref="myClass">
+            <!--при таком условии все файлы и пакеты из src скомпилируются и сохраняться в class-->
+            <src path="src"/>
+
+
+        </javac>
+        <echo> Proverka. COMPILE READY</echo>
+    </target>
+</project>

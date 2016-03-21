@@ -1,0 +1,55 @@
+
+<project name="ANT" default="compile">
+    <target name="clear">
+        <delete dir="Build"/>
+    </target>
+    <!--&lt;!&ndash;благодаря id мы можем указать, что этот файл или файлы мы компилируем-->
+     <!--вместе с  <javac destdir="Build/class" classpathref="myClass">&ndash;&gt;-->
+    <!--<path id="myClass">-->
+        <!--<fileset dir="src/logPass">-->
+            <!--<include name="Fxml/*.fxml"/>-->
+            <!--&lt;!&ndash;<include name="jpg/**.*"/>&ndash;&gt;-->
+        <!--</fileset>-->
+
+    <!--</path>-->
+    <!--&lt;!&ndash;создаем target которая будет при записывании удалять старую сборку и записывать новую&ndash;&gt;-->
+
+    <!--<target name="new.jar" depends="compile">-->
+        <!--<echo> Proverka. DOSHLI DO TOCHKI _____</echo>-->
+        <!--<jar destfile="Build/bin/myprogram.jar">-->
+            <!--&lt;!&ndash;указываем какие файлы должны быть в jar&ndash;&gt;-->
+            <!--<fileset dir="Build/class">-->
+                <!--<include name="**/*.class"/>-->
+            <!--</fileset>-->
+            <!--<path id="myClass">-->
+                <!--<fileset dir="src">-->
+                    <!--<include name="**/*.fxml"/>-->
+                <!--</fileset>-->
+
+            <!--</path>-->
+            <!--&lt;!&ndash;указываем какой класс главный, с какого стартует программа- называем класс и указываем полный путь&ndash;&gt;-->
+            <!--&lt;!&ndash;<echo> Proverka. DOSHLI MA_NI_FE_ST</echo>&ndash;&gt;-->
+            <!--<manifest>-->
+
+                <!--<attribute name="Main-Class" value="logPass.Main"/>-->
+            <!--</manifest>-->
+
+        <!--</jar>-->
+        <!--<echo> ~~~~~~PROSHLI MA_NI_FE_ST~~~~~~~~~~</echo>-->
+    <!--</target>-->
+    <!--Работаем с нашим проектом, в начале создаем раб. каталоги -->
+    <target name="compile" >
+
+        <mkdir dir="Build/class"/>
+        <mkdir dir="Build/bin"/>
+
+        <!--заполняем каталоги файлами, в  class мы записываем все class-->
+        <javac destdir="Build/class" >
+            <!--    classpathref="myClass"    при таком условии все файлы и пакеты из src скомпилируются и сохраняться в class-->
+            <src path="src/logPass"/>
+
+
+        </javac>
+        <echo> Proverka. COMPILE READY</echo>
+    </target>
+</project>
